@@ -115,11 +115,12 @@ BOARD_DEFS = {
         'skip_verify': True
     },
     'creality-v4.2.7': {
-        'mcu': "stm32f401xd",
+        'mcu': "stm32f401xc",
         'spi_bus': "swspi",
         'spi_pins': "PC8,PD2,PC12",
         'cs_pin': "PC11",
-        'skip_verify': True
+        'skip_verify': True,
+        'firmware_path': "/STM32F4_UPDATE/FIRMWARE.BIN"
     },
     'monster8': {
         'mcu': "stm32f407xx",
