@@ -114,6 +114,13 @@ BOARD_DEFS = {
         'cs_pin': "PC11",
         'skip_verify': True
     },
+    'creality-v4.2.7': {
+        'mcu': "stm32f401xd",
+        'spi_bus': "swspi",
+        'spi_pins': "PC8,PD2,PC12",
+        'cs_pin': "PC11",
+        'skip_verify': True
+    },
     'monster8': {
         'mcu': "stm32f407xx",
         'spi_bus': "spi3a",
@@ -179,7 +186,7 @@ BOARD_ALIASES = {
     'btt-skr-mini-mz': BOARD_DEFS['btt-skr-mini'],
     'btt-skr-e3-dip': BOARD_DEFS['btt-skr-mini'],
     'btt002-v1': BOARD_DEFS['btt-skr-mini'],
-    'creality-v4.2.7': BOARD_DEFS['creality-v4.2.2'],
+    # 'creality-v4.2.7': BOARD_DEFS['creality-v4.2.2'],
     'btt-skr-2-f407': BOARD_DEFS['btt-octopus-f407-v1'],
     'btt-skr-2-f429': BOARD_DEFS['btt-octopus-f429-v1'],
     'btt-octopus-f407-v1.0': BOARD_DEFS['btt-octopus-f407-v1'],
