@@ -344,6 +344,10 @@ class FatFS:
                           " result: %s"
                           % (sd_path, FRESULT[ret]))
 
+    def mkdir(self, sd_path):
+        # Can be path to directory or file
+        ret = self.ffi_lib.fatfs_mkdir(sd_path.encode())
+
     def get_file_info(self, sd_file_path):
         finfo = self.ffi_main.new("struct ff_file_info *")
         ret = self.ffi_lib.fatfs_get_fstats(finfo, sd_file_path.encode())
@@ -1367,6 +1371,10 @@ class MCUConnection:
         sd_sha = hashlib.sha1()
         klipper_bin_path = self.board_config['klipper_bin_path']
         fw_path = self.board_config.get('firmware_path', "firmware.bin")
+
+        self.fatfs.mkdir('folderek')
+
+        # TODO: tutaj robimy rzeczy
         try:
             with open(klipper_bin_path, 'rb') as local_f:
                 with self.fatfs.open_file(fw_path, "wb") as sd_f:

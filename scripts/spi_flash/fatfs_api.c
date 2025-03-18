@@ -230,3 +230,12 @@ fatfs_list_dir(struct ff_file_info* flist, uint8_t max_size, char* path)
     }
     return FR_OK;
 }
+
+void __visible
+fatfs_mkdir(const char* path)
+{
+  // FRESULT res;
+  // res = f_mkdir(path);
+  // return res;
+  f_mkdir(path);
+}

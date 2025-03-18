@@ -46,5 +46,7 @@ uint8_t fatfs_get_fstats(struct ff_file_info* finfo, const char* path);
 uint8_t fatfs_get_disk_info(struct ff_disk_info* dinfo);
 uint8_t fatfs_list_dir(struct ff_file_info* flist, uint8_t max_size,
                        char* path);
+// TODO: ja to dodałem, na pewno nie void
+void fatfs_mkdir(const char* path);
 
 #endif
