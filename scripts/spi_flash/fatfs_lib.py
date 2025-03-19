@@ -27,12 +27,14 @@ FATFS_CDEFS = """
         uint32_t (*fattime_callback)(void));
     void fatfs_clear_callbacks(void);
 
+    struct ff_file;
+
     struct ff_file_info {
         uint32_t size;
         uint16_t modified_date;
         uint16_t modified_time;
         uint8_t  attrs;
-        char     name[13];
+        char     name[256];
     };
 
     struct ff_disk_info {

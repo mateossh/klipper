@@ -4,6 +4,7 @@
 /*------------------------------------------------------------------------*/
 
 
+#include <stdlib.h> // malloc / free
 #include "ff.h"
 
 
@@ -167,4 +168,3 @@ void ff_rel_grant (
 }
 
 #endif
-

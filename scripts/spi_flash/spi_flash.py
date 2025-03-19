@@ -1372,7 +1372,13 @@ class MCUConnection:
         klipper_bin_path = self.board_config['klipper_bin_path']
         fw_path = self.board_config.get('firmware_path', "firmware.bin")
 
-        self.fatfs.mkdir('folderek')
+        if '/' in fw_path:
+          name = fw_path.split('/')[0]
+          self.fatfs.mkdir(name)
+
+        test = self.fatfs.list_sd_directory("")
+        output("Testing things")
+        output(test)
 
         # TODO: tutaj robimy rzeczy
         try:
@@ -1391,6 +1397,8 @@ class MCUConnection:
         output("Validating Upload...")
         try:
             finfo = self.fatfs.get_file_info(fw_path)
+            output_line('get file info')
+            output_line(finfo)
             with self.fatfs.open_file(fw_path, 'r') as sd_f:
                 while True:
                     buf = sd_f.read(4096)
